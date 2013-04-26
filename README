@@ -1,3 +1,9 @@
+This clone of googlecode libkml has been created to achieve the 2 points mentioned in this question: http://stackoverflow.com/questions/16190882/point-in-kml-polygon-c-c-code
+Immensely thankful to Mr. Michael Ashbridge for the kickstart: https://gist.github.com/mashbridge/5464228
+
+This branch is the svn mirror of google code - https://code.google.com/p/libkml/source/checkout
+If you want to use git version of it, see the branch "libkml-git" of this repo.
+
 Welcome to libkml!
 
 This is the source code for the libkml project. The main project page is at:
