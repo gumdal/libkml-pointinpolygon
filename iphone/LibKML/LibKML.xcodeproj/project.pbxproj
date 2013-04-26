@@ -380,6 +380,7 @@
 		8FEEEAA91082BFEF0017FEB8 /* xst_parser_test.cc in Sources */ = {isa = PBXBuildFile; fileRef = 8FEEE9361082BFEF0017FEB8 /* xst_parser_test.cc */; };
 		AA747D9F0F9514B9006C5449 /* LibKML_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* LibKML_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		D054FCDB172A86FF00CD3922 /* pointinpolygon.cc in Sources */ = {isa = PBXBuildFile; fileRef = D054FCDA172A86FF00CD3922 /* pointinpolygon.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -763,6 +764,7 @@
 		8FEEE9361082BFEF0017FEB8 /* xst_parser_test.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = xst_parser_test.cc; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* LibKML_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibKML_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D054FCDA172A86FF00CD3922 /* pointinpolygon.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pointinpolygon.cc; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libLibKML.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLibKML.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1197,6 +1199,7 @@
 				8FEEE9081082BFEF0017FEB8 /* update_processor.h */,
 				8FEEE9091082BFEF0017FEB8 /* update_processor_test.cc */,
 				8FEEE90A1082BFEF0017FEB8 /* update_test.cc */,
+				D054FCDA172A86FF00CD3922 /* pointinpolygon.cc */,
 			);
 			path = engine;
 			sourceTree = "<group>";
@@ -1436,7 +1439,11 @@
 			isa = PBXProject;
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "LibKML" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* LibKML */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
@@ -1680,6 +1687,7 @@
 				8FEEEAA71082BFEF0017FEB8 /* xst_parser.cc in Sources */,
 				8FEEEAA91082BFEF0017FEB8 /* xst_parser_test.cc in Sources */,
 				3C87AF2210881A4000015660 /* mimetypes.cc in Sources */,
+				D054FCDB172A86FF00CD3922 /* pointinpolygon.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
