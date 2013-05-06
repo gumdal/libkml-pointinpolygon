@@ -765,6 +765,7 @@
 		AA747D9E0F9514B9006C5449 /* LibKML_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibKML_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D054FCDA172A86FF00CD3922 /* pointinpolygon.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pointinpolygon.cc; sourceTree = "<group>"; };
+		D054FD251737BC7F00CD3922 /* pointinpolygon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pointinpolygon.h; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libLibKML.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLibKML.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1199,6 +1200,7 @@
 				8FEEE9081082BFEF0017FEB8 /* update_processor.h */,
 				8FEEE9091082BFEF0017FEB8 /* update_processor_test.cc */,
 				8FEEE90A1082BFEF0017FEB8 /* update_test.cc */,
+				D054FD251737BC7F00CD3922 /* pointinpolygon.h */,
 				D054FCDA172A86FF00CD3922 /* pointinpolygon.cc */,
 			);
 			path = engine;

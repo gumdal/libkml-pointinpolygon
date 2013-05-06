@@ -1,25 +1,11 @@
 // Implements a basic point-in-polygon test using libkml.
 
-#include <assert.h>
-#include <iostream>
-#include <string>
-
-#include "kml/base/vec3.h"
-#include "kml/dom.h"
-
-using kmlbase::Vec3;
-using kmldom::CoordinatesPtr;
-using kmldom::ElementPtr;
-using kmldom::LinearRingPtr;
-using kmldom::OuterBoundaryIsPtr;
-using kmldom::PointPtr;
-using kmldom::PolygonPtr;
-using std::cout;
-using std::endl;
+#include "pointinpolygon.h"
 
 // See http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
 // for details on how the ray casting algorithm works.
-bool IsPointInPolygon(const PointPtr& point, const PolygonPtr& polygon) {
+bool IsPointInPolygon(const PointPtr& point, const PolygonPtr& polygon)
+{
   // Note: should check that point and polygon are well-formed, have
   // coordinates, etc.
   const Vec3 pt_vec = point->get_coordinates()->get_coordinates_array_at(0);
@@ -48,7 +34,24 @@ bool IsPointInPolygon(const PointPtr& point, const PolygonPtr& polygon) {
   return is_contained;
 }
 
-int main(int argc, char** argv) {
+bool IsPointInKMLPolygon(const char *filePath, kmldom::PointPtr& point)
+{
+    // Find examples here: http://code.google.com/p/libkml/source/browse/trunk/examples#examples%2Fhelloworld
+
+    bool pointInPolygon = false;
+/*    if (DistanceToPolygon(filePath, point)<0.0)
+        pointInPolygon = true;*/
+    
+
+    return pointInPolygon;
+}
+
+float DistanceToPolygon(const char *filePath, kmldom::PointPtr& point)
+{
+    return 0.0;
+}
+
+/*int main(int argc, char** argv) {
 
   // Square polygon bounded +/- 1°.
   const std::string polygon_str(
@@ -90,3 +93,4 @@ int main(int argc, char** argv) {
   ElementPtr point_edge = kmldom::Parse(edge, NULL);
   assert(IsPointInPolygon(kmldom::AsPoint(point_edge), polygon));
 }
+*/
