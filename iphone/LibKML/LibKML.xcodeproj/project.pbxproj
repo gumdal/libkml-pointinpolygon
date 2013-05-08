@@ -74,7 +74,7 @@
 		8FEEE9761082BFEF0017FEB8 /* atom_util.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FEEE7F91082BFEF0017FEB8 /* atom_util.h */; };
 		8FEEE9771082BFEF0017FEB8 /* atom_util_test.cc in Sources */ = {isa = PBXBuildFile; fileRef = 8FEEE7FA1082BFEF0017FEB8 /* atom_util_test.cc */; };
 		8FEEE9781082BFEF0017FEB8 /* convenience.cc in Sources */ = {isa = PBXBuildFile; fileRef = 8FEEE7FB1082BFEF0017FEB8 /* convenience.cc */; };
-		8FEEE9791082BFEF0017FEB8 /* convenience.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FEEE7FC1082BFEF0017FEB8 /* convenience.h */; };
+		8FEEE9791082BFEF0017FEB8 /* convenience.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FEEE7FC1082BFEF0017FEB8 /* convenience.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8FEEE97A1082BFEF0017FEB8 /* convenience_test.cc in Sources */ = {isa = PBXBuildFile; fileRef = 8FEEE7FD1082BFEF0017FEB8 /* convenience_test.cc */; };
 		8FEEE97B1082BFEF0017FEB8 /* csv_file.cc in Sources */ = {isa = PBXBuildFile; fileRef = 8FEEE7FE1082BFEF0017FEB8 /* csv_file.cc */; };
 		8FEEE97C1082BFEF0017FEB8 /* csv_file.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FEEE7FF1082BFEF0017FEB8 /* csv_file.h */; };
@@ -381,6 +381,7 @@
 		AA747D9F0F9514B9006C5449 /* LibKML_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* LibKML_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		D054FCDB172A86FF00CD3922 /* pointinpolygon.cc in Sources */ = {isa = PBXBuildFile; fileRef = D054FCDA172A86FF00CD3922 /* pointinpolygon.cc */; };
+		D5931AF1173A00530098B48D /* pointinpolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = D054FD251737BC7F00CD3922 /* pointinpolygon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1267,6 +1268,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FEEE9791082BFEF0017FEB8 /* convenience.h in Headers */,
+				D5931AF1173A00530098B48D /* pointinpolygon.h in Headers */,
 				AA747D9F0F9514B9006C5449 /* LibKML_Prefix.pch in Headers */,
 				8FEEE9381082BFEF0017FEB8 /* attributes.h in Headers */,
 				8FEEE93A1082BFEF0017FEB8 /* color32.h in Headers */,
@@ -1295,7 +1298,6 @@
 				8FEEE9701082BFEF0017FEB8 /* xmlns.h in Headers */,
 				8FEEE9731082BFEF0017FEB8 /* zip_file.h in Headers */,
 				8FEEE9761082BFEF0017FEB8 /* atom_util.h in Headers */,
-				8FEEE9791082BFEF0017FEB8 /* convenience.h in Headers */,
 				8FEEE97C1082BFEF0017FEB8 /* csv_file.h in Headers */,
 				8FEEE97E1082BFEF0017FEB8 /* element_counter.h in Headers */,
 				8FEEE9811082BFEF0017FEB8 /* feature_list.h in Headers */,
