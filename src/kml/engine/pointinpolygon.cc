@@ -2,6 +2,24 @@
 
 #include "pointinpolygon.h"
 
+#include <string>
+#include "kml/base/file.h"
+
+using kmldom::ContainerPtr;
+using kmldom::ElementPtr;
+using kmldom::FeaturePtr;
+using kmldom::GeometryPtr;
+using kmldom::KmlPtr;
+using kmldom::MultiGeometryPtr;
+using kmldom::PlacemarkPtr;
+using std::cout;
+using std::endl;
+
+void WalkGeometry(const GeometryPtr& geometry);
+void WalkFeature(const FeaturePtr& feature);
+void WalkContainer(const ContainerPtr& container);
+const FeaturePtr GetRootFeature(const ElementPtr& root);
+
 // See http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
 // for details on how the ray casting algorithm works.
 bool IsPointInPolygon(const PointPtr& point, const PolygonPtr& polygon)
@@ -34,15 +52,89 @@ bool IsPointInPolygon(const PointPtr& point, const PolygonPtr& polygon)
   return is_contained;
 }
 
+#pragma mark - Walking through the geometry
+void WalkGeometry(const GeometryPtr& geometry) {
+    if (!geometry) {
+        return;
+    }
+    // Print the Geometry type.
+    cout << "Found a";
+    switch(geometry->Type()) {
+        case kmldom::Type_Point:
+            cout << " Point";
+            break;
+        case kmldom::Type_LineString:
+            cout << " LineString";
+            break;
+        case kmldom::Type_LinearRing:
+            cout << " LinearRing";
+            break;
+        case kmldom::Type_Polygon:
+            cout << " Polygon";
+            break;
+        case kmldom::Type_MultiGeometry:
+            cout << " MultiGeometry";
+            break;
+        case kmldom::Type_Model:
+            cout << " Model";
+            break;
+        default:  // KML has 6 types of Geometry.
+            break;
+    }
+    cout << endl;
+    // Recurse into <MultiGeometry>.
+    if (const MultiGeometryPtr multigeometry =
+        kmldom::AsMultiGeometry(geometry)) {
+        for (size_t i = 0; i < multigeometry->get_geometry_array_size(); ++i) {
+            WalkGeometry(multigeometry->get_geometry_array_at(i));
+        }
+    }
+}
+
+void WalkFeature(const FeaturePtr& feature) {
+    if (feature) {
+        if (const ContainerPtr container = kmldom::AsContainer(feature)) {
+            WalkContainer(container);
+        } else if (const PlacemarkPtr placemark = kmldom::AsPlacemark(feature)) {
+            WalkGeometry(placemark->get_geometry());
+        }
+    }
+}
+
+void WalkContainer(const ContainerPtr& container) {
+    for (size_t i = 0; i < container->get_feature_array_size(); ++i) {
+        WalkFeature(container->get_feature_array_at(i));
+    }
+}
+
+const FeaturePtr GetRootFeature(const ElementPtr& root) {
+    const KmlPtr kml = kmldom::AsKml(root);
+    if (kml && kml->has_feature()) {
+        return kml->get_feature();
+    }
+    return kmldom::AsFeature(root);
+}
+
+#pragma mark -
 bool IsPointInKMLPolygon(const char *filePath, kmldom::PointPtr& point)
 {
     // Find examples here: http://code.google.com/p/libkml/source/browse/trunk/examples#examples%2Fhelloworld
+    // How to walk through polygons: http://code.google.com/p/libkml/source/browse/trunk/examples/helloworld/printgeometry.cc
 
     bool pointInPolygon = false;
 /*    if (DistanceToPolygon(filePath, point)<0.0)
         pointInPolygon = true;*/
     
-
+    std::string kml;
+    kmlbase::File::ReadFileToString(filePath, &kml);
+    std::string errors;
+    WalkFeature(GetRootFeature(kmldom::Parse(kml, &errors)));
+    if (!errors.empty()) {
+        cout << filePath << ": parse error" << endl;
+        cout << errors << endl;
+        return 1;
+    }
+    
     return pointInPolygon;
 }
 
