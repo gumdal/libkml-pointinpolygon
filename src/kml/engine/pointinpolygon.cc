@@ -5,6 +5,16 @@
 #include <string>
 #include "kml/base/file.h"
 
+using kmlbase::Vec3;
+using kmldom::CoordinatesPtr;
+using kmldom::ElementPtr;
+using kmldom::LinearRingPtr;
+using kmldom::OuterBoundaryIsPtr;
+using kmldom::PointPtr;
+using kmldom::PolygonPtr;
+using std::cout;
+using std::endl;
+
 using kmldom::ContainerPtr;
 using kmldom::ElementPtr;
 using kmldom::FeaturePtr;

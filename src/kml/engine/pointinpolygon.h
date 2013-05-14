@@ -16,15 +16,6 @@
 #include "kml/base/vec3.h"
 #include "kml/dom.h"
 
-using kmlbase::Vec3;
-using kmldom::CoordinatesPtr;
-using kmldom::ElementPtr;
-using kmldom::LinearRingPtr;
-using kmldom::OuterBoundaryIsPtr;
-using kmldom::PointPtr;
-using kmldom::PolygonPtr;
-using std::cout;
-using std::endl;
 
 bool IsPointInKMLPolygon(const char *filePath, kmldom::PointPtr& point);
 
