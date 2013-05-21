@@ -382,6 +382,7 @@
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		D054FCDB172A86FF00CD3922 /* pointinpolygon.cc in Sources */ = {isa = PBXBuildFile; fileRef = D054FCDA172A86FF00CD3922 /* pointinpolygon.cc */; };
 		D5931AF1173A00530098B48D /* pointinpolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = D054FD251737BC7F00CD3922 /* pointinpolygon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5CBD571174BF981003C87CB /* gx_timeprimitive.cc in Sources */ = {isa = PBXBuildFile; fileRef = D5CBD570174BF981003C87CB /* gx_timeprimitive.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -768,6 +769,7 @@
 		D054FCDA172A86FF00CD3922 /* pointinpolygon.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pointinpolygon.cc; sourceTree = "<group>"; };
 		D054FD251737BC7F00CD3922 /* pointinpolygon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pointinpolygon.h; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libLibKML.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLibKML.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5CBD570174BF981003C87CB /* gx_timeprimitive.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gx_timeprimitive.cc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -986,6 +988,7 @@
 				8FEEE8351082BFEF0017FEB8 /* geometry.h */,
 				8FEEE8361082BFEF0017FEB8 /* geometry_test.cc */,
 				8FEEE8371082BFEF0017FEB8 /* gx_timeprimitive.h */,
+				D5CBD570174BF981003C87CB /* gx_timeprimitive.cc */,
 				8FEEE8381082BFEF0017FEB8 /* gx_timeprimitive_test.cc */,
 				8FEEE8391082BFEF0017FEB8 /* gx_tour.cc */,
 				8FEEE83A1082BFEF0017FEB8 /* gx_tour.h */,
@@ -1692,6 +1695,7 @@
 				8FEEEAA91082BFEF0017FEB8 /* xst_parser_test.cc in Sources */,
 				3C87AF2210881A4000015660 /* mimetypes.cc in Sources */,
 				D054FCDB172A86FF00CD3922 /* pointinpolygon.cc in Sources */,
+				D5CBD571174BF981003C87CB /* gx_timeprimitive.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
