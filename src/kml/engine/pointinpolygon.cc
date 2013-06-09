@@ -58,7 +58,7 @@ bool IsPointInPolygon(const PointPtr& point, const PolygonPtr& polygon)
     double j_lat = vj.get_latitude();
     double j_lon = vj.get_longitude();
     if ( ((i_lat > p_lat) != (j_lat > p_lat)) &&
-        (p_lon < (j_lon - i_lon) * (p_lat - i_lat) / (j_lat - i_lat) + i_lat)) {
+        (p_lon < (j_lon - i_lon) * (p_lat - i_lat) / (j_lat - i_lat) + i_lon)) {
       is_contained = !is_contained;
     }
   }
