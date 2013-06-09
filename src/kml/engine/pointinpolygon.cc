@@ -30,6 +30,9 @@ void WalkFeature(const FeaturePtr& feature);
 void WalkContainer(const ContainerPtr& container);
 const FeaturePtr GetRootFeature(const ElementPtr& root);
 
+bool foundPointInPolygon;
+kmldom::PointPtr pointPtrForPointInPolygon;
+
 // See http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
 // for details on how the ray casting algorithm works.
 bool IsPointInPolygon(const PointPtr& point, const PolygonPtr& polygon)
@@ -63,8 +66,9 @@ bool IsPointInPolygon(const PointPtr& point, const PolygonPtr& polygon)
 }
 
 #pragma mark - Walking through the geometry
-void WalkGeometry(const GeometryPtr& geometry) {
-    if (!geometry) {
+void WalkGeometry(const GeometryPtr& geometry)
+{
+    if (!geometry || foundPointInPolygon) {
         return;
     }
     // Print the Geometry type.
@@ -81,6 +85,13 @@ void WalkGeometry(const GeometryPtr& geometry) {
             break;
         case kmldom::Type_Polygon:
             cout << " Polygon";
+        {
+            kmldom::PolygonPtr polyGeo = kmldom::AsPolygon(geometry);
+            if (IsPointInPolygon(pointPtrForPointInPolygon,  polyGeo))
+            {
+                foundPointInPolygon = true;
+            }
+        }
             break;
         case kmldom::Type_MultiGeometry:
             cout << " MultiGeometry";
@@ -132,18 +143,29 @@ bool IsPointInKMLPolygon(const char *filePath, kmldom::PointPtr& point)
     // How to walk through polygons: http://code.google.com/p/libkml/source/browse/trunk/examples/helloworld/printgeometry.cc
 
     bool pointInPolygon = false;
+    foundPointInPolygon = false;
+    pointPtrForPointInPolygon = point;
 /*    if (DistanceToPolygon(filePath, point)<0.0)
         pointInPolygon = true;*/
     
     std::string kml;
     kmlbase::File::ReadFileToString(filePath, &kml);
-    std::string errors;
-    WalkFeature(GetRootFeature(kmldom::Parse(kml, &errors)));
-    if (!errors.empty()) {
-        cout << filePath << ": parse error" << endl;
-        cout << errors << endl;
-        return 1;
+    std::cout<<"Output string: " <<kml;
+    if (kml.length())
+    {
+        std::string errors;
+        WalkFeature(GetRootFeature(kmldom::Parse(kml, &errors)));
+        if (foundPointInPolygon)
+            pointInPolygon = true;
+        if (!errors.empty()) {
+            cout << filePath << ": parse error" << endl;
+            cout << errors << endl;
+//            return 0;
+        }
     }
+    // Reset the global values
+    pointPtrForPointInPolygon = NULL;
+    foundPointInPolygon = false;
     
     return pointInPolygon;
 }
