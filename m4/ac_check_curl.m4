@@ -23,15 +23,14 @@
 #   and this notice are preserved.
 
 AC_DEFUN([AC_CHECK_CURL], [
-  succeeded=no
-
   if test -z "$CURL_CONFIG"; then
     AC_PATH_PROG(CURL_CONFIG, curl-config, no)
   fi
 
   if test "$CURL_CONFIG" = "no" ; then
-    echo "*** The curl-config script could not be found. Make sure it is"
-    echo "*** in your path, and that curl is properly installed."
+    echo "*** The curl-config script could not be found. If you would like"
+    echo "*** to compile the examples, make sure it is in your path, and"
+    echo "*** that curl is properly installed."
     echo "*** Or see http://curl.haxx.se/"
   else
     dnl curl-config --version returns "libcurl <version>", thus cut the number
@@ -61,10 +60,6 @@ AC_DEFUN([AC_CHECK_CURL], [
         AC_SUBST(CURL_LIBS)
   fi
 
-  if test $succeeded = yes; then
-     ifelse([$2], , :, [$2])
-  else
-     ifelse([$3], , AC_MSG_ERROR([Library requirements (curl) not met.]), [$3])
-  fi
+  ifelse([$2], , :, [$2])
 ])
 
