@@ -12,15 +12,15 @@ csvregionator_SOURCES = csvregionator.cc
 csvregionator_LDADD = \
 	$(top_builddir)/src/kml/base/libkmlbase.la \
 	$(top_builddir)/src/kml/dom/libkmldom.la \
-	$(top_builddir)/src/kml/engine/libkmlengine.la \
 	$(top_builddir)/src/kml/regionator/libkmlregionator.la \
-	$(top_builddir)/src/kml/convenience/libkmlconvenience.la
+	$(top_builddir)/src/kml/convenience/libkmlconvenience.la \
+	$(top_builddir)/src/kml/engine/libkmlengine.la
 
 kmlregionator_SOURCES = kmlregionator.cc
 kmlregionator_LDADD = \
 	$(top_builddir)/src/kml/base/libkmlbase.la \
 	$(top_builddir)/src/kml/dom/libkmldom.la \
-	$(top_builddir)/src/kml/engine/libkmlengine.la \
 	$(top_builddir)/src/kml/regionator/libkmlregionator.la \
-	$(top_builddir)/src/kml/convenience/libkmlconvenience.la
+	$(top_builddir)/src/kml/convenience/libkmlconvenience.la \
+	$(top_builddir)/src/kml/engine/libkmlengine.la
 
