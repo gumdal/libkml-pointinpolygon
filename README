@@ -1,35 +1,23 @@
-This clone of googlecode libkml has been created to achieve the 2 points mentioned in this question: http://stackoverflow.com/questions/16190882/point-in-kml-polygon-c-c-code
-Immensely thankful to Mr. Michael Ashbridge for the kickstart: https://gist.github.com/mashbridge/5464228
+This is a clone of libkml (http://libkml.googlecode.com/). 
 
-This branch is the svn mirror of google code - https://code.google.com/p/libkml/source/checkout
-If you want to use git version of it, see the branch "libkml-git" of this repo.
+* It fixes several Linux compilation issues
+* Adds support for the Style tag embedded in Placemark.
 
-Welcome to libkml!
-
-This is the source code for the libkml project. The main project page is at:
-http://libkml.googlecode.com/
-
-All of our documentation is on the project wiki:
+A sparse libkml documentation is on the project wiki:
 http://code.google.com/p/libkml/w/list
 
-The wiki contains documents that describe:
-- An overview of the most recent release
-- Building and running the code
-- Running the unit tests
-- A general API reference guide
-- More details guides to each of the libkml modules
+Special thanks to gumdal for importing libkml to git.
 
-The main project page has links to the discussion group and the mailing list
-that mirrors the commit and issue logs.
+Steps to build
+```
+git clone https://github.com/kubark42/libkml.git
+cd libkml
+./autogen.sh
+mkdir build
+cd build
+../configure
+make
+sudo make install
+```
 
-Note on strings in libkml:
-As of r680, we changed all use of "std::string" to just "string". This change
-was motivated by a desire to permit use in codebases that provide their own
-string class. This change was transparent to you because of this change to
-src/kml/base/util.h:
-
-#ifndef HAS_GLOBAL_STRING
-using std::string;
-#endif
-
-All string-using code in libkml was modified to pull in that header.
+If there are any problems, please start an issue. 
