@@ -6,7 +6,7 @@ Required:
 g++: 4.0.1, 4.0.3 (or MS Visual Studio 2005 on Windows)
 expat: expat.sourceforge.net 2.0.1
 zlib: www.zlib.net 1.2.3
-googletest: http://googletest.googlecode.com r108 (supplied in this project)
+gtest-1.6.0: http://googletest.googlecode.com  (supplied in this project)
 
 Optional:
 curl: curl.haxx.se/
