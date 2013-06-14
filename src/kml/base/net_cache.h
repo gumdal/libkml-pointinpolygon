@@ -50,7 +50,7 @@ namespace kmlbase {
 class NetFetcher {
  public:
   virtual ~NetFetcher() {}
-  virtual bool FetchUrl(const string& url, string* data) const {
+  virtual bool FetchUrl(const string &, string *) const {
     return false;
   }
 };
