@@ -1,0 +1,2 @@
+# Exclude temporary and system files
+.DS_Store

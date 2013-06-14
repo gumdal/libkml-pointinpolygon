@@ -7,6 +7,7 @@ AC_INIT(libkml, 1.3.0, http://code.google.com/p/libkml/issues)
 AC_CONFIG_SRCDIR(README)
 AC_CONFIG_AUX_DIR(config)
 AM_INIT_AUTOMAKE(-Wall -Werror)
+m4_ifdef([AM_PROG_AR], [AM_PROG_AR])
 
 AC_PROG_CPP
 AC_PROG_CXX
@@ -191,22 +192,27 @@ AM_CONDITIONAL(HAVE_CURL, test "$CURL_LIBS")
 dnl automake will add -DHAVE_CONFIG_H to compiler flags.
 AM_CONFIG_HEADER([config.h]) 
 
+if test "$CURL_LIBS"; then
+	AC_CONFIG_FILES([
+		examples/Makefile
+		examples/domviewer/Makefile
+		examples/engine/Makefile
+		examples/gpx/Makefile
+		examples/gx/Makefile
+		examples/hellonet/Makefile
+		examples/helloworld/Makefile
+		examples/java/Makefile
+		examples/kml/Makefile
+		examples/python/Makefile
+		examples/regionator/Makefile
+		examples/wxregionator/Makefile
+		examples/wxviewer/Makefile
+		examples/xsd/Makefile
+	])
+fi
+
 AC_CONFIG_FILES([
 	Makefile
-	examples/Makefile
-	examples/domviewer/Makefile
-	examples/engine/Makefile
-	examples/gpx/Makefile
-	examples/gx/Makefile
-	examples/hellonet/Makefile
-	examples/helloworld/Makefile
-	examples/java/Makefile
-	examples/kml/Makefile
-	examples/python/Makefile
-	examples/regionator/Makefile
-	examples/wxregionator/Makefile
-	examples/wxviewer/Makefile
-	examples/xsd/Makefile
 	msvc/Makefile
 	msvc/examples/Makefile
 	msvc/tests/Makefile

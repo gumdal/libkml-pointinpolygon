@@ -43,7 +43,7 @@ const kmldom::FeaturePtr GetRootFeature(const kmldom::ElementPtr& root);
 class FeatureVisitor {
  public:
   virtual ~FeatureVisitor() {}
-  virtual void VisitFeature(const kmldom::FeaturePtr& feature) {}
+  virtual void VisitFeature(const kmldom::FeaturePtr &) {}
 };
 
 // Visit the Feature hierarchy rooted at feature calling the VisitFeature()

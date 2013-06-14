@@ -1,11 +1,11 @@
 AM_CPPFLAGS = -I$(top_srcdir)/src \
               -I$(top_srcdir)/third_party/boost_1_34_1 \
-              -I$(top_srcdir)/third_party/googletest-r108/include \
+              -I$(top_srcdir)/third_party/gtest-1.6.0/include \
               -I$(top_srcdir)/third_party/uriparser-0.7.5/include \
               -I$(top_srcdir)/third_party/zlib-1.2.3/contrib
 
 if GCC
-AM_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -Werror -ansi -pedantic -fno-rtti
+AM_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -Werror -ansi -pedantic -Wno-long-long -fno-rtti
 AM_TEST_CXXFLAGS = -Wall -Wextra -Wno-unused-parameter -Werror -ansi -fno-rtti -DGTEST_HAS_RTTI=0
 endif
 
