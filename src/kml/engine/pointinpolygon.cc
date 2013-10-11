@@ -72,19 +72,19 @@ void WalkGeometry(const GeometryPtr& geometry)
         return;
     }
     // Print the Geometry type.
-    cout << "Found a";
+//    cout << "Found a";
     switch(geometry->Type()) {
         case kmldom::Type_Point:
-            cout << " Point";
+//            cout << " Point";
             break;
         case kmldom::Type_LineString:
-            cout << " LineString";
+//            cout << " LineString";
             break;
         case kmldom::Type_LinearRing:
-            cout << " LinearRing";
+//            cout << " LinearRing";
             break;
         case kmldom::Type_Polygon:
-            cout << " Polygon";
+//            cout << " Polygon";
         {
             kmldom::PolygonPtr polyGeo = kmldom::AsPolygon(geometry);
             if (IsPointInPolygon(pointPtrForPointInPolygon,  polyGeo))
@@ -94,15 +94,15 @@ void WalkGeometry(const GeometryPtr& geometry)
         }
             break;
         case kmldom::Type_MultiGeometry:
-            cout << " MultiGeometry";
+//            cout << " MultiGeometry";
             break;
         case kmldom::Type_Model:
-            cout << " Model";
+//            cout << " Model";
             break;
         default:  // KML has 6 types of Geometry.
             break;
     }
-    cout << endl;
+//    cout << endl;
     // Recurse into <MultiGeometry>.
     if (const MultiGeometryPtr multigeometry =
         kmldom::AsMultiGeometry(geometry)) {
@@ -150,7 +150,7 @@ bool IsPointInKMLPolygon(const char *filePath, kmldom::PointPtr& point)
     
     std::string kml;
     kmlbase::File::ReadFileToString(filePath, &kml);
-    std::cout<<"Output string: " <<kml;
+//    std::cout<<"Output string: " <<kml;
     if (kml.length())
     {
         std::string errors;
@@ -158,8 +158,8 @@ bool IsPointInKMLPolygon(const char *filePath, kmldom::PointPtr& point)
         if (foundPointInPolygon)
             pointInPolygon = true;
         if (!errors.empty()) {
-            cout << filePath << ": parse error" << endl;
-            cout << errors << endl;
+//            cout << filePath << ": parse error" << endl;
+//            cout << errors << endl;
 //            return 0;
         }
     }
