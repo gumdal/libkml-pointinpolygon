@@ -1444,9 +1444,11 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "LibKML" */;
 			compatibilityVersion = "Xcode 3.1";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				en,
@@ -1706,8 +1708,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_CXX_LIBRARY = "compiler-default";
+				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/LibKML.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1721,14 +1722,14 @@
 					../../third_party/boost_1_34_1,
 					../../third_party/expat.win32,
 					"../../third_party/googletest-r108/include",
-					"../../third_party/uriparser-0.7.5/include",
+					"../../third_party/uriparser-0.7.1/include",
 					"../../third_party/zlib-1.2.3/contrib",
+					"\"$(SRCROOT)/../../third_party/uriparser-0.7.5/include\"",
 				);
 				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = LibKML;
-				PUBLIC_HEADERS_FOLDER_PATH = $TARGET_NAME;
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -1736,8 +1737,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_CXX_LIBRARY = "compiler-default";
+				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/LibKML.dst;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1747,14 +1747,14 @@
 					../../third_party/boost_1_34_1,
 					../../third_party/expat.win32,
 					"../../third_party/googletest-r108/include",
-					"../../third_party/uriparser-0.7.5/include",
+					"../../third_party/uriparser-0.7.1/include",
 					"../../third_party/zlib-1.2.3/contrib",
+					"\"$(SRCROOT)/../../third_party/uriparser-0.7.5/include\"",
 				);
 				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = LibKML;
-				PUBLIC_HEADERS_FOLDER_PATH = $TARGET_NAME;
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};

@@ -31,7 +31,7 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <unistd.h>
+#include <unistd.h> // https://stackoverflow.com/a/32955920/260665
 
 namespace kmlbase {
 
