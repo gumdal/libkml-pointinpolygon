@@ -1705,6 +1705,15 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LibKML_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					../../src,
+					../../third_party/boost_1_34_1,
+					../../third_party/expat.win32,
+					"../../third_party/googletest-r108/include",
+					"../../third_party/uriparser-0.7.1/include",
+					"../../third_party/zlib-1.2.3/contrib",
+					"\"$(SRCROOT)/../../third_party/uriparser-0.7.5/include\"",
+				);
 				INSTALL_PATH = /usr/local/lib;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = LibKML;
@@ -1721,6 +1730,15 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LibKML_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					../../src,
+					../../third_party/boost_1_34_1,
+					../../third_party/expat.win32,
+					"../../third_party/googletest-r108/include",
+					"../../third_party/uriparser-0.7.1/include",
+					"../../third_party/zlib-1.2.3/contrib",
+					"\"$(SRCROOT)/../../third_party/uriparser-0.7.5/include\"",
+				);
 				INSTALL_PATH = /usr/local/lib;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = LibKML;
