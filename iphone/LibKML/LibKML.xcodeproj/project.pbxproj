@@ -1731,6 +1731,7 @@
 				PRODUCT_NAME = LibKML;
 				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -1757,6 +1758,7 @@
 				PRODUCT_NAME = LibKML;
 				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
